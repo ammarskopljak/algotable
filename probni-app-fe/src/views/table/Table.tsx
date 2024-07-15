@@ -4,7 +4,6 @@ import './Table.css';
 import {
   DataGrid,
   getGridNumericOperators,
-  getGridSingleSelectOperators,
   getGridStringOperators,
   GridColDef,
   GridSortModel,
@@ -80,48 +79,12 @@ function Table() {
       filterOperators: filterOperators,
     },
     {
-      field: 'age',
-      headerName: 'Age',
-      flex: 0.5,
-      disableColumnMenu: true,
-      filterable: true,
-      sortable: true,
-      filterOperators: filterOperators,
-    },
-    {
       field: 'gender',
       headerName: 'Gender',
       flex: 0.5,
       disableColumnMenu: true,
       filterable: true,
       sortable: true,
-      filterOperators: filterOperators,
-    },
-    {
-      field: 'interests',
-      headerName: 'Interests',
-      flex: 2,
-      disableColumnMenu: true,
-      filterable: true,
-      sortable: false,
-      filterOperators: filterOperators,
-    },
-    {
-      field: 'itemHistory',
-      headerName: 'Item History',
-      flex: 2,
-      disableColumnMenu: true,
-      filterable: true,
-      sortable: false,
-      filterOperators: getGridSingleSelectOperators(),
-    },
-    {
-      field: 'actions',
-      headerName: '',
-      flex: 1,
-      disableColumnMenu: true,
-      filterable: false,
-      sortable: false,
       filterOperators: filterOperators,
     },
   ];
@@ -158,8 +121,8 @@ function Table() {
     const getData = async () => {
       try {
         const data = await getUsers(queryOptions);
-        setTotal(data.total > 0 ? data.total : 0); // ako nemas itema uvijek vrati 0
-        setUsers(data.users.length > 0 ? data.users : []); // ako nemas itema uvijek vrati [] jer datagrid mora imati rows pa makar bili prazni
+        setTotal(data.total > 0 ? data.total : 0); 
+        setUsers(data.users.length > 0 ? data.users : []);
       } catch (e) {
         setError(e);
       } finally {
