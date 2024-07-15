@@ -1,0 +1,18 @@
+.table-row {
+  background-color: lightyellow !important;
+}
+
+.historyCell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 100%;
+}
