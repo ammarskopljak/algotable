@@ -87,17 +87,24 @@ function Table() {
       sortable: true,
       filterOperators: filterOperators,
     },
+    {
+      field: 'age',
+      headerName: 'Age',
+      flex: 0.5,
+      disableColumnMenu: true,
+      filterable: false,
+      sortable: true,
+      filterOperators: filterNumericOperators,
+    },
+    {
+      field: 'actions',
+      headerName: '',
+      flex: 0.5,
+      disableColumnMenu: true,
+      filterable: true,
+      sortable: true,
+    },
   ];
-
-  columns[columns.length - 2].renderCell = (params) => {
-    return (
-      <div className="item-history">
-        {params.value.split(',').map((item, index) => (
-          <div key={index}>{item}</div>
-        ))}
-      </div>
-    );
-  };
 
   columns[columns.length - 1].renderCell = (params) => {
     return (
@@ -121,7 +128,7 @@ function Table() {
     const getData = async () => {
       try {
         const data = await getUsers(queryOptions);
-        setTotal(data.total > 0 ? data.total : 0); 
+        setTotal(data.total > 0 ? data.total : 0);
         setUsers(data.users.length > 0 ? data.users : []);
       } catch (e) {
         setError(e);
@@ -156,7 +163,6 @@ function Table() {
           rowCount={total}
           columns={columns}
           pagination={true}
-          getRowHeight={() => 'auto'}
           pageSizeOptions={[5, 10, 25, 50, 100]}
           filterMode="server"
           paginationMode="server"
