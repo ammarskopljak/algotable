@@ -30,7 +30,6 @@ Algoritam funkcioniše na način da izvuče interese i povijest kupovine korisni
 
 ```bash
 $ npm install
-$ npm install react-router-dom --save
 $ docker compose up
 $ npx prisma generate
 $ npm run start
