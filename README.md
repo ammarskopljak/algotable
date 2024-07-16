@@ -22,6 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Objašnjenje algoritma
+
+Algoritam funkcioniše na način da izvuče interese i povijest kupovine korisnika za kojeg tražimo preporuke, zatim traži slične korisnike koji imaju neke od interesa kao i korisnik kojeg pretražujemo. Potom pravi (praznu) mapu preporučenih proizvoda koji se prikazuju u drugim korisnicima i prolazi kroz listu sličnih korisnika, te kroz listu njihove povijesti kupovine. Nakon toga, za svaki proizvod koji se nalazi u povijesti kupovine sličnih korisnika algoritam gleda da li se proizvod već nalazi u mapi preporučenih proizvoda, ako ne, dodaje mu se "count" (kao neko bodovanje) sa vrijednosti 1, a ako se već pojavio proizvod u listi, dodaje se na njegov "count" +1. Na kraju algoritam sortira mapu preporučenih proizvoda, tako da proizvodi sa najvećim "count-om" budu na vrhu, što znači da u listi preporučenih proizvoda za svakog korisnika, proizvodi koji su najbolja preporuka će biti na vrhu
+
 ## Running the backend
 
 ```bash
