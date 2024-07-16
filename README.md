@@ -22,27 +22,20 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+## Running the backend
 
 ```bash
 $ npm install
+$ docker compose up
+$ npx prisma generate
+$ npm run start
 ```
 
-## Running the app
+## Running the frontend (in a separate terminal)
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+$ cd probni-app-fe
+$ npm run dev
 ```
 
 ## Test
@@ -57,6 +50,14 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## Dependencies
+
+- React
+- Vite
+- Nest.js
+- Prisma
+- PostgreSQL
 
 ## Support
 
