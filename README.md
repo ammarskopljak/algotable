@@ -26,6 +26,7 @@
 
 ```bash
 $ npm install
+$ npm install react-router-dom --save
 $ docker compose up
 $ npx prisma generate
 $ npm run start
@@ -35,6 +36,7 @@ $ npm run start
 
 ```bash
 $ cd probni-app-fe
+$ npm install
 $ npm run dev
 ```
 
